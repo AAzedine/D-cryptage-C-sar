@@ -1,0 +1,150 @@
+#Copyright 2015 Azedine Ammari et Bouchiki 
+#This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+
+
+#Programme réalisé par Azedine Ammari et Anesse Bouchiki
+#Décodage d'un texte codé sous Python
+
+print "Entrez le texte à décrypter en:-SANS ACCENT-SANS PONCTUACTION"
+texte=raw_input()
+print "Entrez la clé de décodage comprise entre 0 et 6"
+cle=input()
+texte=texte.upper()
+
+
+#print texte
+
+alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+code=""
+
+for i in range(0,len(texte)):
+    
+    code=code+alphabet[alphabet.index(texte[i])-cle]
+    
+
+#print code
+
+
+
+alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+espace1=""
+espace=" "
+
+
+for i in range(0,len(espace)):
+    
+        espace1=espace1+alphabet[alphabet.index(espace[i])-cle]
+
+#print espace1
+
+
+
+if cle==1:
+    code1=code.replace(espace1,' ')
+    
+    
+#    print code1
+    
+    
+elif cle==2:
+    code1=code.replace(espace1,' ')
+    code2=code1.replace('Z',espace1)
+    
+    
+#    print code1
+#    print code2
+    
+    
+elif cle==3:
+    code1=code.replace(espace1,' ')
+    code2=code1.replace('Y',espace1)
+    code3=code2.replace('Z','Y')
+    
+    
+#    print code1
+#    print code2
+#    print code3
+    
+    
+elif cle==4:
+    code1=code.replace(espace1,' ')
+    code2=code1.replace('X',espace1)
+    code3=code2.replace('Y','X')
+    code4=code3.replace('Z','Y')
+    
+    
+#    print code1
+#    print code2
+#    print code3
+#    print code4
+    
+
+elif cle==5:
+    code1=code.replace(espace1,' ')
+    code2=code1.replace('W',espace1)
+    code3=code2.replace('X','W')
+    code4=code3.replace('Y','X')
+    code5=code4.replace('Z','Y')
+    
+    
+
+#    print code1
+#    print code2
+#    print code3
+#    print code4
+#    print code5
+    
+
+elif cle==6:
+    code1=code.replace(espace1,' ')
+    code2=code1.replace('V',espace1)
+    code3=code2.replace('W','V')
+    code4=code3.replace('X','W')
+    code5=code4.replace('Y','X')
+    code6=code5.replace('Z','Y')
+    code7=code6.replace('  ','Z ')
+
+#    print code1
+#    print code2
+#    print code3
+#    print code4
+#    print code5
+#    print code6
+    
+    
+    
+if cle==1:
+    codefinal=code1
+    print "Voici le texte décrypté:" +codefinal
+    
+elif cle==2:
+    codefinal=code2
+    print "Voici le texte décrypté:" +codefinal
+
+elif cle==3:
+    codefinal=code3
+    print "Voici le texte décrypté:" +codefinal
+    
+elif cle==4:
+    codefinal=code4
+    print "Voici le texte décrypté:" +codefinal
+    
+elif cle==5:
+    codefinal=code5
+    print "Voici le texte décrypté:" +codefinal
+
+elif cle==6:
+    codefinal=code7
+    print "Voici le texte décrypté:" +codefinal
+
